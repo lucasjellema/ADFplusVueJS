@@ -33,6 +33,7 @@
                 </af:gridRow>
             </af:panelGridLayout>
         </af:form>
+        <af:resource type="javascript" source="resources/js/VueContent.js"/>
         <af:resource type="javascript">
           function handleLoad(event) {
               console.log('Loaded import: ' + event.target.href);
@@ -47,20 +48,7 @@
           }
 
     function init() {
-      new Vue({
-      el: '#app',
-      data: {
-        greeting: 'Welcome to your hybrid ADF and Vue.js app!',
-        docsURL: 'http://vuejs.org/guide/',
-      },
-      methods: {
-        humanizeURL: function (url) {
-          return url
-            .replace(/^https?:\/\//, '')
-            .replace(/\/$/, '')
-        }
-      }
-      }) /* new Vue */
+     initVue();
     }/* init */
         </af:resource>
     </af:document>
