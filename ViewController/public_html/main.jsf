@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="ADF plus Vue.js" id="d1">
+        <link id="VueContentImport" rel="import" href="VueContent.html" onload="handleLoad(event)"
+              onerror="handleError(event)"/>
+        <af:clientListener method="init" type="load"/>
+        <af:resource type="javascript" source="https://unpkg.com/vue"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:panelHeader text="ADF plus Vue.js" id="ph1">
+                        </af:panelHeader>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <h:panelGroup id="pg1">
+                            <af:inputText label="A real ADF Input Text element" id="it1"/>
+                            <af:button text="Some Button" id="b1"/>
+                            
+                            <div id="app" xmlns="http://www.w3.org/1999/xhtml" >
+                                 
+                            </div>
+                            <af:button text="Some Other Button" id="b2"/>
+                                 
+                            
+                        </h:panelGroup>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+        <af:resource type="javascript">
+          function handleLoad(event) {
+              console.log('Loaded import: ' + event.target.href);
+              //var link = document.querySelector('link[id="VueContentImport"]');
+              var link = document.getElementById("VueContentImport");
+              var doc = link.
+              import;
+              /* Grab DOM from imported document*/
+              var text = doc.querySelector('#content');
+              var clone = text.cloneNode(true);
+              document.getElementById('app').appendChild(clone);
+          }
+
+    function init() {
+      new Vue({
+      el: '#app',
+      data: {
+        greeting: 'Welcome to your hybrid ADF and Vue.js app!',
+        docsURL: 'http://vuejs.org/guide/',
+      },
+      methods: {
+        humanizeURL: function (url) {
+          return url
+            .replace(/^https?:\/\//, '')
+            .replace(/\/$/, '')
+        }
+      }
+      }) /* new Vue */
+    }/* init */
+        </af:resource>
+    </af:document>
+</f:view>
