@@ -23,14 +23,13 @@
                             <af:inputText label="A real ADF Input Text element" id="it1"/>
                             <af:button text="Some Button" id="b1"/>
                             
-                            <div id="app" xmlns="http://www.w3.org/1999/xhtml" >
-                                 
-                            </div>
+                            <af:panelGroupLayout id="app" layout="vertical">
+                            </af:panelGroupLayout>
                             <af:button text="Some Other Button" id="b2"/>
-                                 
+                             
                             
                         </h:panelGroup>
-                    </af:gridCell>
+                        </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:form>
