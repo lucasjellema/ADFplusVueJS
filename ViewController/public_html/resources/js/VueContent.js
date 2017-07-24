@@ -235,7 +235,8 @@ function initVue() {
         value:'Welcome to the tutorial <small>which is all about Vue.js</small>',
         viewed:true,
         updates:updates,
-        showReplyModal: false
+        showReplyModal: false,
+        slides: 7
         },
       methods: {
         humanizeURL: function (url) {
@@ -243,6 +244,10 @@ function initVue() {
             .replace(/^https?:\/\//, '')
             .replace(/\/$/, '')
         }
-      }
-      }) /* new Vue */
+      },
+      components: {
+        'carousel-3d': Carousel3d.Carousel3d,
+        'slide': Carousel3d.Slide
+      }   
+  }) /* new Vue */
 }

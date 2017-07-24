@@ -22,4 +22,12 @@
              Send me a {{greeting}}
         </li>
     </ul>
+    <div id="example">
+<script type="text/javascript"  src="https://rawgit.com/Wlada/vue-carousel-3d/master/dist/vue-carousel-3d.min.js" ></script>
+  <carousel-3d>
+    <slide v-for="(slide, i) in slides" :index="i">
+      <img src="https://placehold.it/360x270">
+    </slide>
+  </carousel-3d>
+</div>
 </div>
