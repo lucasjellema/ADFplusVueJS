@@ -14,24 +14,24 @@
                 <af:gridRow height="50px" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
-                        <af:panelHeader text="ADF plus Vue.js" id="ph1">
-                        </af:panelHeader>
+                        <af:panelHeader text="ADF plus Vue.js" id="ph1"></af:panelHeader>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Content -->
                         <h:panelGroup id="pg1">
-                            <af:inputText label="A real ADF Input Text element" id="it1"/>
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText label="A real ADF Input Text element" id="it1"/>
+                                <af:inputDate label="Pick a date" id="id1"/>
+                                <f:facet name="footer"/>
+                            </af:panelFormLayout>
                             <af:button text="Some Button" id="b1"/>
-                            
-                            <af:panelGroupLayout id="app" layout="vertical">
-                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="app" layout="vertical"></af:panelGroupLayout>
                             <af:button text="Some Other Button" id="b2"/>
                              
-                            
                         </h:panelGroup>
-                        </af:gridCell>
+                    </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
         </af:form>
